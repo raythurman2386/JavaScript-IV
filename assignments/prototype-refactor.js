@@ -20,7 +20,7 @@ class GameObject {
 
 
 /*      Character      */
-class CharacterStats {
+class CharacterStats extends GameObject {
     constructor(charAttr) {
         super(charAttr);
         this.healthPoints = charAttr.healthPoints;
@@ -37,7 +37,7 @@ class CharacterStats {
 
 
 /*      Humans      */
-class Humanoid {
+class Humanoid extends CharacterStats {
     constructor(humanAttr) {
         super(humanAttr);
         this.team = humanAttr.team;
@@ -53,26 +53,26 @@ class Humanoid {
 
 /*      Hero      */
 
-function Hero(heroAttr) {
-    Humanoid.call(this, heroAttr);
-    this.armor = heroAttr.armor;
+class Hero extends Humanoid {
+    constructor(heroAttr) {
+        super(heroAttr);
+        this.armor = heroAttr.armor;
+    }
+    dealDamage(target) {
+        let i = Math.floor(Math.random() * 3);
+        return target.takeDamage(i);
+    }
 }
 
-Hero.prototype = Object.create(Humanoid.prototype);
-
-Hero.prototype.dealDamage = function (target) {
-    let i = Math.floor(Math.random() * 3);
-    return target.takeDamage(i);
-}
 
 /*      Villain     */
 
-function Villain(villainAttr) {
-    Hero.call(this, villainAttr);
-    this.magic = villainAttr.magic;
+class Villain extends Hero {
+    constructor(villainAttr) {
+        super(villainAttr);
+        this.magic = villainAttr.magic;
+    }
 }
-
-Villain.prototype = Object.create(Hero.prototype);
 
 
 /*
