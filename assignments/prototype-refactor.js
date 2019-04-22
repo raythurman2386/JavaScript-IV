@@ -7,31 +7,35 @@ Prototype Refactor
 2. Your goal is to refactor all of this code to use ES6 Classes. The console.log() statements should still return what is expected of them.
 
 */
-function GameObject(attr) {
-    this.createdAt = attr.createdAt;
-    this.name = attr.name;
-    this.dimensions = attr.dimensions;
-}
-
-GameObject.prototype.destroy = function () {
-    return `${this.name} was removed from the game.`;
-}
-/*      Character      */
-function CharacterStats(charAttr) {
-    GameObject.call(this, charAttr);
-    this.healthPoints = charAttr.healthPoints;
-}
-
-CharacterStats.prototype = Object.create(GameObject.prototype);
-
-CharacterStats.prototype.takeDamage = function (i) {
-    this.healthPoints = this.healthPoints - i;
-    if (this.healthPoints > 0) {
-        return `${this.name} took ${i} damage.\nHealth Points: ${this.healthPoints}`;
-    } else if (this.healthPoints <= 0) {
-        return this.destroy();
+class GameObject {
+    constructor(attr) {
+        this.createdAt = attr.createdAt;
+        this.name = attr.name;
+        this.dimensions = attr.dimensions;
+    }
+    destroy() {
+        return `${this.name} was removed from the game.`;
     }
 }
+
+
+/*      Character      */
+class CharacterStats {
+    constructor(charAttr) {
+        super(charAttr);
+        this.healthPoints = charAttr.healthPoints;
+    }
+    takeDamage(i) {
+        this.healthPoints = this.healthPoints - i;
+        if (this.healthPoints > 0) {
+            return `${this.name} took ${i} damage.\nHealth Points: ${this.healthPoints}`;
+        } else if (this.healthPoints <= 0) {
+            return this.destroy();
+        }
+    }
+}
+
+
 /*      Humans      */
 function Humanoid(humanAttr) {
     CharacterStats.call(this, humanAttr);
