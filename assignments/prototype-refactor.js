@@ -37,18 +37,19 @@ class CharacterStats {
 
 
 /*      Humans      */
-function Humanoid(humanAttr) {
-    CharacterStats.call(this, humanAttr);
-    this.team = humanAttr.team;
-    this.weapons = humanAttr.weapons;
-    this.language = humanAttr.language;
+class Humanoid {
+    constructor(humanAttr) {
+        super(humanAttr);
+        this.team = humanAttr.team;
+        this.weapons = humanAttr.weapons;
+        this.language = humanAttr.language;
+    }
+    greet() {
+        return `${this.name} offers a greeting in ${this.language}`;
+    }
 }
 
-Humanoid.prototype = Object.create(CharacterStats.prototype);
 
-Humanoid.prototype.greet = function () {
-    return `${this.name} offers a greeting in ${this.language}`;
-}
 
 /*      Hero      */
 
