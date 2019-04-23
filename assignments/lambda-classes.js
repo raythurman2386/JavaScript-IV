@@ -62,6 +62,9 @@ class ProjectManager extends Instructor {
 }
 
 // Objects for each of the constructors
+
+// Instructors
+
 const keiran = new Instructor({
   name: "Keiran",
   location: "Utah",
@@ -81,6 +84,8 @@ const dan = new Instructor({
   specialty: "React",
   catchPhrase: "Hello, Hello",
 });
+
+// Students
 
 const ray = new Student({
   name: "Ray",
@@ -102,6 +107,8 @@ const don = new Student({
   favSubjects: ["Html", "CSS", "JavaScript"],
 });
 
+// Project Manager
+
 const ronald = new ProjectManager({
   name: "Dan",
   location: "Utah",
@@ -113,3 +120,5 @@ const ronald = new ProjectManager({
   gradClassName: "WEB16",
   favInstructor: "Dan",
 });
+
+// Console.logs to test everything
