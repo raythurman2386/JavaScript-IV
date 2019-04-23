@@ -67,7 +67,7 @@ class Hero extends Humanoid {
 
 /*      Villain     */
 
-class Villain extends Hero {
+class Villain extends Humanoid {
     constructor(villainAttr) {
         super(villainAttr);
         this.magic = villainAttr.magic;
@@ -167,7 +167,6 @@ const mainVillain = new Villain({
         'Magic',
     ],
     language: 'God',
-    armor: 3,
     magic: 15,
 });
 
