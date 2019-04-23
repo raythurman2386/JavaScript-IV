@@ -62,3 +62,42 @@ class ProjectManager extends Instructor {
 }
 
 // Objects for each of the constructors
+const keiran = new Instructor({
+  name: "Keiran",
+  location: "Utah",
+  age: 25,
+  gender: "male",
+  favLanguage: "JavaScript",
+  specialty: "Front-End",
+  catchPhrase: "I don't know whats up with my dog.",
+});
+
+const dan = new Instructor({
+  name: "Dan",
+  location: "Utah",
+  age: 32,
+  gender: "male",
+  favLanguage: "JavaScript",
+  specialty: "React",
+  catchPhrase: "Hello, Hello",
+});
+
+const ray = new Student({
+  name: "Ray",
+  location: "Indiana",
+  age: 30,
+  gender: "male",
+  previousBackground: "US Army",
+  className: "WEBPT6",
+  favSubjects: ["Html", "CSS", "JavaScript"],
+});
+
+const don = new Student({
+  name: "Donald",
+  location: "Indiana",
+  age: 34,
+  gender: "male",
+  previousBackground: "unknown",
+  className: "WEBPT6",
+  favSubjects: ["Html", "CSS", "JavaScript"],
+});
