@@ -37,7 +37,7 @@ class Student extends Person {
     this.favSubjects = studentAttr.favSubjects;
   }
   listsSubjects() {
-    this.favSubjects.forEach(element => {
+    favSubjects.forEach(element => {
       return element;
     });
   }
@@ -113,16 +113,30 @@ const don = new Student({
 // Project Manager
 
 const ronald = new ProjectManager({
-  name: "Dan",
-  location: "Utah",
+  name: "Ronald",
+  location: "California",
   age: 32,
   gender: "male",
   favLanguage: "JavaScript",
-  specialty: "React",
-  catchPhrase: "Hello, Hello",
+  specialty: "Back-End",
+  catchPhrase: "It's Stand Up time",
   gradClassName: "WEB16",
   favInstructor: "Dan",
 });
 
-// Console.logs to test everything
-console.log(ray.listsSubjects());
+// Console.logs to test objects
+console.log(keiran); // Instructor
+console.log(dan); // Instructor
+console.log(ray); // Student
+console.log(don); // Student
+console.log(ronald); // Project Manager
+
+// Console.logs to test methods on Instructors
+console.log(keiran.demo("React"));
+console.log(dan.grade(ray, "React"));
+
+// Console.logs to test methods on Students
+
+// Console.logs to test methods on the PM
+console.log(ronald.standUp("WEBPT6"));
+console.log(ronald.debugsCode(ray, "JSIV Project"));
