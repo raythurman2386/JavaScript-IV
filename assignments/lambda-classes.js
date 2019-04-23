@@ -15,6 +15,7 @@ class Person {
 // Instructor extends from Person
 class Instructor extends Person {
   constructor(instructorAttr) {
+    super(instructorAttr);
     this.specialty = instructorAttr.specialty;
     this.favLanguage = instructorAttr.favLanguage;
     this.catchPhrase = instructorAttr.catchPhrase;
@@ -30,6 +31,7 @@ class Instructor extends Person {
 // Student extends from person
 class Student extends Person {
   constructor(studentAttr) {
+    super(studentAttr);
     this.previousBackground = studentAttr.previousBackground;
     this.className = studentAttr.className;
     this.favSubjects = studentAttr.favSubjects;
@@ -50,6 +52,7 @@ class Student extends Person {
 // PM extends from Instructor
 class ProjectManager extends Instructor {
   constructor(pmAttr) {
+    super(pmAttr);
     this.gradClassName = pmAttr.gradClassName;
     this.favInstructor = pmAttr.favInstructor;
   }
@@ -122,3 +125,4 @@ const ronald = new ProjectManager({
 });
 
 // Console.logs to test everything
+console.log(ray.listsSubjects());
