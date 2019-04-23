@@ -58,8 +58,8 @@ class Hero extends Humanoid {
         super(heroAttr);
         this.armor = heroAttr.armor;
     }
-    dealDamage(target) {
-        let i = Math.floor(Math.random() * 3);
+    heroicSlash(target) {
+        let i = Math.floor(Math.random() * 6);
         return target.takeDamage(i);
     }
 }
@@ -71,6 +71,10 @@ class Villain extends Humanoid {
     constructor(villainAttr) {
         super(villainAttr);
         this.magic = villainAttr.magic;
+    }
+    frostbolt(target) {
+        let i = Math.floor(Math.random() * 3);
+        return target.takeDamage(i);
     }
 }
 
@@ -181,7 +185,7 @@ console.log(archer.greet()); // Lilith offers a greeting in Elvish.
 console.log(mage.takeDamage(1)); // Bruce took damage.
 console.log(swordsman.destroy()); // Sir Mustachio was removed from the game.
 console.log(mainHero);
-console.log(mainHero.dealDamage(mainVillain));
-console.log(mainVillain);
+console.log(mainHero.heroicSlash(mainVillain));
+console.log(mainVillain.frostbolt(mainHero));
 console.log(mainHero.name);
 console.log(mainVillain.name);
