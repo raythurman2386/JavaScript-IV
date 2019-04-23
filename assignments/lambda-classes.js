@@ -132,14 +132,19 @@ console.log(don); // Student
 console.log(ronald); // Project Manager
 
 // Console.logs to test methods on Instructors
+console.log(keiran.name);
 console.log(keiran.demo("React"));
 console.log(dan.grade(ray, "React"));
+console.log(dan.specialty);
 
 // Console.logs to test methods on Students
 ray.listsSubjects();
 console.log(ray.PRAssignment("react"));
+console.log(ray.previousBackground);
 console.log(don.sprintChallenge("JavaScript"));
+console.log(don.className);
 
 // Console.logs to test methods on the PM
 console.log(ronald.standUp("WEBPT6"));
 console.log(ronald.debugsCode(ray, "JSIV Project"));
+console.log(ronald.specialty);
