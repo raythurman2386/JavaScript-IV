@@ -1,4 +1,5 @@
 // CODE here for your Lambda Classes
+// Person is the base constructor
 class Person {
   constructor(attr) {
     this.name = attr.name;
@@ -11,6 +12,7 @@ class Person {
   }
 }
 
+// Instructor extends from Person
 class Instructor extends Person {
   constructor(instructorAttr) {
     this.specialty = instructorAttr.specialty;
@@ -25,6 +27,7 @@ class Instructor extends Person {
   }
 }
 
+// Student extends from person
 class Student extends Person {
   constructor(studentAttr) {
     this.previousBackground = studentAttr.previousBackground;
@@ -44,6 +47,7 @@ class Student extends Person {
   }
 }
 
+// PM extends from Instructor
 class ProjectManager extends Instructor {
   constructor(pmAttr) {
     this.gradClassName = pmAttr.gradClassName;
@@ -56,3 +60,5 @@ class ProjectManager extends Instructor {
     return `${this.name} debugs ${student.name}'s code on ${subject}`;
   }
 }
+
+// Objects for each of the constructors
