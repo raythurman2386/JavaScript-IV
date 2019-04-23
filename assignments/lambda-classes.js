@@ -37,8 +37,8 @@ class Student extends Person {
     this.favSubjects = studentAttr.favSubjects;
   }
   listsSubjects() {
-    favSubjects.forEach(element => {
-      return element;
+    this.favSubjects.forEach(element => {
+      console.log(element);
     });
   }
   PRAssignment(subject) {
@@ -136,6 +136,9 @@ console.log(keiran.demo("React"));
 console.log(dan.grade(ray, "React"));
 
 // Console.logs to test methods on Students
+ray.listsSubjects();
+console.log(ray.PRAssignment("react"));
+console.log(don.sprintChallenge("JavaScript"));
 
 // Console.logs to test methods on the PM
 console.log(ronald.standUp("WEBPT6"));
