@@ -101,3 +101,15 @@ const don = new Student({
   className: "WEBPT6",
   favSubjects: ["Html", "CSS", "JavaScript"],
 });
+
+const ronald = new ProjectManager({
+  name: "Dan",
+  location: "Utah",
+  age: 32,
+  gender: "male",
+  favLanguage: "JavaScript",
+  specialty: "React",
+  catchPhrase: "Hello, Hello",
+  gradClassName: "WEB16",
+  favInstructor: "Dan",
+});
