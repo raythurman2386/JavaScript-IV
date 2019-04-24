@@ -26,6 +26,21 @@ class Instructor extends Person {
   grade(student, subject) {
     return `${student.name} receives a perfect score on ${subject}.`;
   }
+  gradedAssignment(student) {
+    if (student.grade <= 50) {
+      let newGrade = Math.floor(Math.random() * 100);
+      student.grade = newGrade + student.grade;
+      return `${student.name}'s grade has changed to ${student.grade}!`;
+    } else {
+      let newGrade = Math.floor(Math.random() * 100);
+      if (newGrade > student.grade) {
+        student.grade = newGrade - student.grade;
+      } else {
+        student.grade = student.grade - newGrade;
+      }
+      return `${student.name}'s grade has changed to ${student.grade}!`;
+    }
+  }
 }
 
 // Student extends from person
@@ -108,7 +123,7 @@ const ray = new Student({
   previousBackground: "US Army",
   className: "WEBPT6",
   favSubjects: ["Html", "CSS", "JavaScript"],
-  grade: 72,
+  grade: 68,
 });
 
 const don = new Student({
@@ -119,7 +134,7 @@ const don = new Student({
   previousBackground: "unknown",
   className: "WEBPT6",
   favSubjects: ["Html", "CSS", "JavaScript"],
-  grade: 88,
+  grade: 71,
 });
 
 // Project Manager
@@ -156,9 +171,16 @@ console.log(ray.previousBackground);
 console.log(don.sprintChallenge("JavaScript"));
 console.log(don.className);
 
-console.log(ray.graduate());
-
 // Console.logs to test methods on the PM
 console.log(ronald.standUp("WEBPT6"));
 console.log(ronald.debugsCode(ray, "JSIV Project"));
 console.log(ronald.specialty);
+
+// Stretch Graduate Method
+console.log(ray.graduate());
+console.log(don.graduate());
+
+console.log(ronald.gradedAssignment(ray));
+
+console.log(ray.graduate());
+console.log(don.graduate());
