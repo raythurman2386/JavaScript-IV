@@ -48,6 +48,15 @@ class Student extends Person {
   sprintChallenge(subject) {
     return `${this.name} has begun a sprint challenge on ${subject}.`;
   }
+  graduate() {
+    if (this.grade >= 70) {
+      return `Congratulations ${
+        this.name
+      } you have graduated from Lambda School!!!`;
+    } else {
+      return `${this.name} keep trying you're almost there!!`;
+    }
+  }
 }
 
 // PM extends from Instructor
@@ -146,6 +155,8 @@ console.log(ray.PRAssignment("react"));
 console.log(ray.previousBackground);
 console.log(don.sprintChallenge("JavaScript"));
 console.log(don.className);
+
+console.log(ray.graduate());
 
 // Console.logs to test methods on the PM
 console.log(ronald.standUp("WEBPT6"));
